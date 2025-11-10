@@ -21,11 +21,13 @@ public class CalClient {
             nPort = 6789;
         }
 
+        // prepare I/O
         BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
         Socket clientSocket = new Socket(serverIP, nPort); // TCP connection
         DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
         BufferedReader inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 
+        // send client input
         System.out.print("Enter the Sentence: ");
         sentence = inFromUser.readLine();
         outToServer.writeBytes(sentence + '\n');
