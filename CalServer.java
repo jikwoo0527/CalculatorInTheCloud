@@ -58,7 +58,7 @@ public class CalServer {
                 String[] split = input.split("\\s+");
                 if (split.length != 3) {
                     writeError(outToClient, 400, "BAD_REQUEST",
-                            "expected '<op> <a> <b>'");
+                            "expected '<operator> <num1> <num2>'");
                     return;
                 } else {
                     operator = split[0];
