@@ -41,7 +41,7 @@ public class CalServer {
                 int num1 = 0;
                 int num2 = 0;
 
-                // execution
+                // connection
                 inFromClient = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                 outToClient = new DataOutputStream(socket.getOutputStream());
 
@@ -53,7 +53,7 @@ public class CalServer {
                 }
                 System.out.println("FROM CLIENT: " + input);
 
-                // Split
+                // client input split
                 input = input.trim().toLowerCase();
                 String[] split = input.split("\\s+");
                 if (split.length != 3) {
@@ -71,7 +71,7 @@ public class CalServer {
                     }
                 }
 
-                // Calculate
+                // calculate
                 switch (operator) {
                     case "add":
                         result = Integer.toString(num1 + num2);
